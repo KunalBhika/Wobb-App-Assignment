@@ -12,9 +12,14 @@ dotenv.config();
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',  // frontend link
+    methods: ['GET', 'POST', 'PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  }));
 
-app.use("/api/auth/" , authRoutes);
+app.use("/api/auth" , authRoutes);
 
 connectToDatabase();
 
