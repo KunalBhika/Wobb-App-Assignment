@@ -1,33 +1,37 @@
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className="card m-10 bg-base-100 w-80 shadow-lg">
-      <figure>
+    <div className="card m-8 bg-base-100 w-90 shadow-lg">
+      <figure className="h-50">
         <img
-          src="https://stream.jdmagicbox.com/thumbnail/mp-zvibsoscmt7ywfb-himalaya-fresh-start-oil-clear-lemon-face-wash-50ml-226863378/jd-Ott_720x540_Thumbnail.0000008.jpg"
+          src={props.cardData.bannerUrl}
           alt="Shoes"
         />
       </figure>
 
       <div className="card-body">
         <div className="flex justify-between items-center">
-          <h2 className="card-title text-xl">Himalaya Facewash</h2>
+          <h2 className="card-title text-xl">{props.cardData.title}</h2>
           <div className="avatar shadow-xl">
             <div className="w-13 rounded">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZFdGgyyA09f8QbtgbcrXSZrpLmg5rMcsag&s" />
+              <img src={props.cardData.logoUrl} />
             </div>
           </div>
         </div>
 
         {/* Badges */}
         <div className="flex justify-start items-center">
-          <div className="badge badge-sm badge-soft outline badge-primary mr-2">
-            Personal Care
-          </div>
-          <div className="badge badge-sm badge-soft outline badge-primary mr-2">
-            Skincare
-          </div>
+          {props.cardData.tags.map((tag, index) => {
+            return (
+              <div
+                key={index}
+                className="badge badge-sm badge-soft outline badge-primary mr-2"
+              >
+                {tag}
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex items-center py-2">
@@ -66,15 +70,17 @@ const Card = () => {
         <div className="flex justify-between items-center w-auto pb-2">
           <div className="card rounded-box grid h-12 grow place-items-center">
             <p className="font-medium text-base text-gray-500">Cash</p>
-            <p className="font-medium text-sm">₹ 1,000</p>
+            <p className="font-medium text-sm">₹ {props.cardData.cash}</p>
           </div>
           <div className="card rounded-box grid h-12 grow place-items-center">
             <p className="font-medium text-base text-gray-500">Barter</p>
-            <p className="font-medium text-sm">₹ 550</p>
+            <p className="font-medium text-sm">₹ {props.cardData.barter}</p>
           </div>
           <div className="card rounded-box grid h-12 grow place-items-center">
             <p className="font-medium text-base text-gray-500">Hired</p>
-            <p className="font-medium text-sm text-green-500">18/50</p>
+            <p className="font-medium text-sm text-green-500">
+              {props.cardData.hired}/{props.cardData.totalRequirement}
+            </p>
           </div>
         </div>
 
