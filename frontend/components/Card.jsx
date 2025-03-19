@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="card m-auto bg-base-100 w-80 shadow-lg">
+    <div className="card m-10 bg-base-100 w-80 shadow-lg">
       <figure>
         <img
           src="https://stream.jdmagicbox.com/thumbnail/mp-zvibsoscmt7ywfb-himalaya-fresh-start-oil-clear-lemon-face-wash-50ml-226863378/jd-Ott_720x540_Thumbnail.0000008.jpg"
@@ -22,10 +22,10 @@ const Card = () => {
 
         {/* Badges */}
         <div className="flex justify-start items-center">
-          <div className="badge badge-sm badge-soft outline badge-success mr-2">
+          <div className="badge badge-sm badge-soft outline badge-primary mr-2">
             Personal Care
           </div>
-          <div className="badge badge-sm badge-soft outline badge-success mr-2">
+          <div className="badge badge-sm badge-soft outline badge-primary mr-2">
             Skincare
           </div>
         </div>
@@ -79,7 +79,7 @@ const Card = () => {
         </div>
 
         <div className="card-actions">
-          <button className="btn btn-success text-white w-full">
+          <button className="btn btn-primary text-white w-full">
             Apply now
           </button>
         </div>

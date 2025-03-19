@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuthStore } from '../store/useAuthStore';
-import toast from 'react-hot-toast';
-import { Eye, EyeOff, Loader2, Lock, Mail, MessageCircleMore } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore";
+import toast from "react-hot-toast";
+import {
+  Eye,
+  EyeOff,
+  Loader2,
+  Lock,
+  Mail,
+} from "lucide-react";
 
 const LoginPage = () => {
-  const [showPassword , setShowPassword] = useState(false);
-  const [formData , setFormData] = useState({
-    email : "" ,
-    password : ""
-  })
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const {login , isLoggingin} = useAuthStore();
+  const { login, isLoggingin } = useAuthStore();
 
   const validateForm = () => {
-    if(!formData.email) return toast.error("Email is required");
-    if(!formData.password) return toast.error("Password is required");
+    if (!formData.email) return toast.error("Email is required");
+    if (!formData.password) return toast.error("Password is required");
     return true;
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(validateForm() === true) login(formData); 
-  }
+    if (validateForm() === true) login(formData);
+  };
 
   const onChange = (e) => {
-    setFormData({ ...formData , [e.target.name] : e.target.value});
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="h-screen grid lg:grid-cols-1">
@@ -36,10 +42,16 @@ const LoginPage = () => {
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
               <div
-                className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20
+                className="w-15 h-15 rounded-xl flex items-center justify-center group-hover:bg-primary/20
               transition-colors"
               >
-                <MessageCircleMore className="w-6 h-6 text-primary" />
+                <img
+                  width="50"
+                  sizes="50px"
+                  alt="A photo of Wobb's logo"
+                  src="https://cdn.prod.website-files.com/6716c18e45760446b740a31c/6716c18e45760446b740a3b6_logo%20final%20one%205.png"
+                  loading="lazy"
+                />
               </div>
               <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
               <p className="text-base-content/60">Sign in to your account</p>
@@ -97,7 +109,11 @@ const LoginPage = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary w-full" disabled={isLoggingin}>
+            <button
+              type="submit"
+              className="btn btn-primary w-full"
+              disabled={isLoggingin}
+            >
               {isLoggingin ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
@@ -120,7 +136,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;

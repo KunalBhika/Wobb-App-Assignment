@@ -5,7 +5,6 @@ import {
   Loader2,
   Lock,
   Mail,
-  MessageCircleMore,
   User,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -48,8 +47,14 @@ const SignUpPage = () => {
           {/* LOGO */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
-              <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <MessageCircleMore className="size-6 text-primary" />
+              <div className="size-12 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <img
+                  width="50"
+                  sizes="50px"
+                  alt="A photo of Wobb's logo"
+                  src="https://cdn.prod.website-files.com/6716c18e45760446b740a31c/6716c18e45760446b740a3b6_logo%20final%20one%205.png"
+                  loading="lazy"
+                />
               </div>
               <h1 className="text-2xl font-bold mt-2">Create Account</h1>
               <p className="text-base-content/60">
