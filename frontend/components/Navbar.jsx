@@ -3,7 +3,7 @@ import { LogOut } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore.js";
 
 function Navbar() {
-  const { authUser } = useAuthStore();
+  const { authUser , logout } = useAuthStore();
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -29,7 +29,7 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li className="flex items-center">
+            <li className="flex items-center" onClick={logout}>
               <a className="font-medium text-sm">
                 Logout
                 <LogOut size={18} />
