@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const connectToDatabase = () => {
     try {
-        mongoose.connect(process.env.MONGODB_URI).then(() => {
-            console.log("Connected to Database : " , process.env.MONGODB_URI);
+        mongoose.connect("mongodb+srv://kunalbhika2:Kunalbhika@cluster0.zdkzp.mongodb.net/Wobb_assesment_db?retryWrites=true&w=majority&appName=Cluster0").then(() => {
+            console.log("Connected to Database : ", process.env.MONGODB_URI);
         }).catch(err => {
             console.log("Error connecting to database ", err);
         })
