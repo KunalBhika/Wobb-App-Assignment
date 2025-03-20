@@ -22,7 +22,7 @@ const cardData = [
         bannerUrl: "https://tajfoodstore.com/wp-content/uploads/2022/12/parachute-oil.jpg",
         logoUrl: "https://image.aapkabazar.co/product/268/1699596192199.png?type=png",
         applyLink: "#"
-    } ,
+    },
 
     {
         title: "Bombay Shaving Company",
@@ -36,6 +36,28 @@ const cardData = [
         applyLink: "#"
     },
 
+    {
+        title: "Boat Headphone",
+        tags: ["Electronics", "Lifestyle"],
+        cash: 2000,
+        barter: 1000,
+        hired: 5,
+        totalRequirement: 10,
+        bannerUrl: "https://www.boat-lifestyle.com/cdn/shop/articles/Top-games-and-Immortal-headphones.jpg?v=1628758719",
+        logoUrl: "https://img.etimg.com/thumb/width-1200,height-900,imgsize-2384,resizemode-75,msid-93587014/industry/cons-products/electronics/locally-manufactured-1-mln-units-of-various-products-in-q1fy23-boat.jpg",
+        applyLink: "#"
+    },
+    {
+        title: "Boat Headphone",
+        tags: ["Electronics", "Lifestyle"],
+        cash: 2000,
+        barter: 1000,
+        hired: 5,
+        totalRequirement: 10,
+        bannerUrl: "https://www.boat-lifestyle.com/cdn/shop/articles/Top-games-and-Immortal-headphones.jpg?v=1628758719",
+        logoUrl: "https://img.etimg.com/thumb/width-1200,height-900,imgsize-2384,resizemode-75,msid-93587014/industry/cons-products/electronics/locally-manufactured-1-mln-units-of-various-products-in-q1fy23-boat.jpg",
+        applyLink: "#"
+    },
     {
         title: "Boat Headphone",
         tags: ["Electronics", "Lifestyle"],

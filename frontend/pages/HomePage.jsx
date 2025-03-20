@@ -8,12 +8,9 @@ function HomePage() {
     <>
       <Filter />
       <div className="flex flex-wrap justify-center items-center mx-auto">
-        <Card cardData={cardData[0]} />
-        <Card cardData={cardData[1]} />
-        <Card cardData={cardData[2]} />
-        <Card cardData={cardData[3]} />
-        <Card cardData={cardData[0]} />
-        <Card cardData={cardData[0]} />
+        {cardData.map((campaignData, index) => {
+          return <Card key={index} cardData={campaignData} />;
+        })}
       </div>
     </>
   );
